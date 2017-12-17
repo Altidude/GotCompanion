@@ -1,0 +1,10 @@
+C:\Users\goofball\Desktop\Projects\GotCompanion\GotCompanion\GotCompanion\bin\Release\GotCompanion.exe.config
+C:\Users\goofball\Desktop\Projects\GotCompanion\GotCompanion\GotCompanion\bin\Release\GotCompanion.exe
+C:\Users\goofball\Desktop\Projects\GotCompanion\GotCompanion\GotCompanion\bin\Release\GotCompanion.pdb
+C:\Users\goofball\Desktop\Projects\GotCompanion\GotCompanion\GotCompanion\obj\Release\GotCompanion.frmGame.resources
+C:\Users\goofball\Desktop\Projects\GotCompanion\GotCompanion\GotCompanion\obj\Release\GotCompanion.frmMain.resources
+C:\Users\goofball\Desktop\Projects\GotCompanion\GotCompanion\GotCompanion\obj\Release\GotCompanion.frmSetup.resources
+C:\Users\goofball\Desktop\Projects\GotCompanion\GotCompanion\GotCompanion\obj\Release\GotCompanion.Properties.Resources.resources
+C:\Users\goofball\Desktop\Projects\GotCompanion\GotCompanion\GotCompanion\obj\Release\GotCompanion.csproj.GenerateResource.Cache
+C:\Users\goofball\Desktop\Projects\GotCompanion\GotCompanion\GotCompanion\obj\Release\GotCompanion.exe
+C:\Users\goofball\Desktop\Projects\GotCompanion\GotCompanion\GotCompanion\obj\Release\GotCompanion.pdb

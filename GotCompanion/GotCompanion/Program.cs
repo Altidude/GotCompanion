@@ -22,9 +22,11 @@ namespace GotCompanion
             var mainForm = new frmMain();
             mainForm.Show();
 
+            /*
             System.Media.SoundPlayer player = new System.Media.SoundPlayer();
             player.SoundLocation = "C:\\Users\\goofball\\Desktop\\theme.wav";
             player.Play();
+            */
 
             Application.Run();
         }

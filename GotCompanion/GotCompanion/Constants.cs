@@ -348,7 +348,7 @@ namespace GotCompanion
         public int numStarredOrders;
         public int numCastles;
 
-        public int[] supplyValues;
+        public int[] supplyValues = { 2, 2 };
         public HouseDeck houseCards;
         public Order[] OrderSet;
 
@@ -398,6 +398,10 @@ namespace GotCompanion
                 if (p.owner == this) supply += p.supply;
             }
             numSupply = supply;
+
+            int index = numSupply;
+            if (numSupply > 6) index = 6;
+            supplyValues = game.supplyValues[index];
         }
 
         public void updateCastles(Scenario game)
@@ -405,7 +409,7 @@ namespace GotCompanion
             int castles = 0;
             foreach (Plot p in game.map.MapPlots)
             {
-                if (p.fort > 0) castles++;
+                if (p.fort > 0 && p.owner == this) castles++;
             }
             numCastles = castles;
         }

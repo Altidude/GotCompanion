@@ -20,7 +20,7 @@ namespace GotCompanion
             InitializeComponent();
 
             game = new Scenario(scenarioId);
-            displayMapInfo();
+            //displayMapInfo();
 
             playGame();
         }
@@ -146,6 +146,7 @@ namespace GotCompanion
 
         private void PlanningPhase()
         {
+            //Load all events into the queue
             EventBuffer.Clear();
             EventBuffer.Enqueue(new Event(null, "Place Orders"));
 
@@ -155,9 +156,73 @@ namespace GotCompanion
                 updateEventUI();
             }
 
-            tab_Decision.SelectedIndex = 0;
-        }
+            EventBuffer.Enqueue(new Event(game.MessengerRavenTrack[0], "Use Messenger Raven"));
 
+            //Unload/Execute events
+            while (EventBuffer.Count != 0)
+            {
+                Event current = EventBuffer.ElementAt<Event>(0);
+
+                if (current.Text.Equals("Place Orders"))
+                {
+                    tab_Decision.SelectedIndex = 0;
+                    btn_NextAction.Enabled = true;
+
+                }
+                /*else if (current.Text.Equals("Reveal Orders"))
+                {
+
+                }
+                else if (current.Text.Equals("Use Messenger Raven"))
+                {
+
+                }*/
+                else throw new Exception("Something went wrong in the Planning Phase!");
+
+                //Wait until Event is resolved
+                while(!current.Resolved)
+                {
+                    System.Threading.Thread.Sleep(1000);
+                }
+
+            }
+
+
+
+
+
+
+
+            /*while(EventBuffer.Count != 0)
+            {
+                Event current = EventBuffer.ElementAt<Event>(0);
+                if (current.Text.Equals("Place Orders"))
+                {
+                    tab_Decision.SelectedIndex = 0;
+                    current.Resolved = true;
+
+                }
+                else if (current.Text.Equals("Reveal Orders"))
+                {
+
+                }
+                else if (current.Text.Equals("Use Messenger Raven"))
+                {
+
+                }
+                else throw new Exception("Something went wrong in the Planning Phase!");
+
+                while (btn_NextAction.Enabled) { }
+
+
+            }*/
+
+
+
+
+
+        }
+        
         public void displayMapInfo()
         {
             Label[] labels =
@@ -207,9 +272,7 @@ namespace GotCompanion
                 i += 4;
             }            
         }
-
-
-        #region Form Methods
+        */
         private void updateEventUI()
         {
             if (EventBuffer.Count == 0)
@@ -279,6 +342,8 @@ namespace GotCompanion
 
 
         }
+        #region Form Methods
+        
 
         private void frmGame_Load(object sender, EventArgs e)
         {
@@ -286,7 +351,9 @@ namespace GotCompanion
 
         private void btn_NextAction_Click(object sender, EventArgs e)
         {
-            EventBuffer.Dequeue();
+            Event current = EventBuffer.Dequeue();
+            current.Resolved = true;
+
             updateEventUI();
         }
         #endregion Form Methods

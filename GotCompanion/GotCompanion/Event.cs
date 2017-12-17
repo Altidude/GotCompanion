@@ -10,6 +10,7 @@ namespace GotCompanion
     {
         public string Text = "";
         public Faction Player;
+        public bool Resolved = false;
 
         public Event(Faction faction, string text)
         {
