@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace GotCompanion
 {
-    public partial class frmMain : Form
+    public partial class frmSetup : Form
     {
-        public frmMain()
+        public frmSetup()
         {
             InitializeComponent();
-
-        }
-
-        private void btn_PlayGame_Click(object sender, EventArgs e)
-        {
-            frmGame gameForm = new frmGame(0);
-            gameForm.Show();
-            this.Close();
         }
     }
 }
