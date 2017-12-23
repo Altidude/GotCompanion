@@ -9,3 +9,4 @@ C:\Users\goofball\Desktop\Projects\GotCompanion\GotCompanion\GotCompanion\obj\De
 C:\Users\goofball\Desktop\Projects\GotCompanion\GotCompanion\GotCompanion\obj\Debug\GotCompanion.pdb
 C:\Users\goofball\Desktop\Projects\GotCompanion\GotCompanion\GotCompanion\obj\Debug\GotCompanion.frmGame.resources
 C:\Users\goofball\Desktop\Projects\GotCompanion\GotCompanion\GotCompanion\obj\Debug\GotCompanion.frmSetup.resources
+C:\Users\goofball\Desktop\Projects\GotCompanion\GotCompanion\GotCompanion\obj\Debug\GotCompanion.frmRevealOrders.resources

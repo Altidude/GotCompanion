@@ -88,6 +88,16 @@ namespace GotCompanion
             return true;
         }
 
+        /// <summary>
+        /// Place an order on the Plot
+        /// </summary>
+        /// <param name="o"></param>
+        public void addOrder(Order o)
+        {
+            o.location = this;
+            this.order = o;
+        }
+
 
     }
 

@@ -20,7 +20,7 @@ namespace GotCompanion
             InitializeComponent();
 
             game = new Scenario(scenarioId);
-            //displayMapInfo();
+            displayMapInfo();
 
             playGame();
         }
@@ -157,10 +157,8 @@ namespace GotCompanion
             }
 
             EventBuffer.Enqueue(new Event(game.MessengerRavenTrack[0], "Use Messenger Raven"));
-
+            
             //Unload/Execute events
-            while (EventBuffer.Count != 0)
-            {
                 Event current = EventBuffer.ElementAt<Event>(0);
 
                 if (current.Text.Equals("Place Orders"))
@@ -176,51 +174,12 @@ namespace GotCompanion
                 else if (current.Text.Equals("Use Messenger Raven"))
                 {
 
-                }*/
-                else throw new Exception("Something went wrong in the Planning Phase!");
+                }
+                else throw new Exception("Something went wrong in the Planning Phase!");*/
 
                 //Wait until Event is resolved
-                while(!current.Resolved)
-                {
-                    System.Threading.Thread.Sleep(1000);
-                }
 
-            }
-
-
-
-
-
-
-
-            /*while(EventBuffer.Count != 0)
-            {
-                Event current = EventBuffer.ElementAt<Event>(0);
-                if (current.Text.Equals("Place Orders"))
-                {
-                    tab_Decision.SelectedIndex = 0;
-                    current.Resolved = true;
-
-                }
-                else if (current.Text.Equals("Reveal Orders"))
-                {
-
-                }
-                else if (current.Text.Equals("Use Messenger Raven"))
-                {
-
-                }
-                else throw new Exception("Something went wrong in the Planning Phase!");
-
-                while (btn_NextAction.Enabled) { }
-
-
-            }*/
-
-
-
-
-
+            
         }
         
         public void displayMapInfo()
@@ -264,15 +223,20 @@ namespace GotCompanion
                     else if (u.SiegeTower) siegetowers++;
                     else throw new Exception("Invalid Unit in " + p.name);
                 }
-                labels[i + 2].Text = footmen + " Footmen, " + knights + " Knights, " + siegetowers + " Siege Towers, " + ships + " Ships";
+                labels[i + 2].Text = "";
 
-                if (p.order == null) labels[i + 3].Text = "None";
+                if (footmen > 0) labels[i + 2].Text += footmen + " Footmen, ";
+                if (knights > 0) labels[i + 2].Text += knights + " Knights, ";
+                if (siegetowers > 0) labels[i + 2].Text += siegetowers + " Siege Towers, ";
+                if (ships > 0) labels[i + 2].Text += ships + " Ships";
+
+                if (p.order == null) labels[i + 3].Text = "";
                 else labels[i + 3].Text = p.order.ToString();
 
                 i += 4;
             }            
         }
-        */
+        
         private void updateEventUI()
         {
             if (EventBuffer.Count == 0)
@@ -355,9 +319,26 @@ namespace GotCompanion
             current.Resolved = true;
 
             updateEventUI();
+            btn_NextAction.Enabled = false;
+
+            Event next = EventBuffer.ElementAt<Event>(0);
+            switch(next.Text)
+            {
+                case "Reveal Orders":
+                    tab_Decision.SelectedIndex = 1;
+                    break;
+            }
+
+            displayMapInfo();
         }
+
         #endregion Form Methods
 
-        
+        private void btn_RevealOrders_Click(object sender, EventArgs e)
+        {
+            var RevealOrders = new frmRevealOrders(this, game, EventBuffer.ElementAt<Event>(0).Player);
+            RevealOrders.Show();
+            btn_NextAction.Enabled = true;
+        }
     }
 }
