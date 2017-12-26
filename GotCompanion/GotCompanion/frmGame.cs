@@ -14,12 +14,19 @@ namespace GotCompanion
     {
         Scenario game;
         Queue<Event> EventBuffer;
+        Order banned;
+
+        //Used in deciding what order to resolve
+        Plot[] factionResolveOrder;
 
         public frmGame(int scenarioId)
         {
             InitializeComponent();
 
             game = new Scenario(scenarioId);
+            banned = null;
+            factionResolveOrder = new Plot[3];
+
             displayMapInfo();
 
             playGame();
@@ -33,7 +40,7 @@ namespace GotCompanion
             
             #region Initial Form Setup
 
-            label_CurrentEffects.Text = "Current Effects: N/A";
+            label_CurrentEffects.Text = "Current Effects: None";
             label_WildlingStrength.Text = "Wildling Strength: " + game.wildlingStrength;
             label_Round.Text = "Round " + game.roundNumber;
             label_Phase.Text = "Planning Phase";
@@ -157,29 +164,120 @@ namespace GotCompanion
             }
 
             EventBuffer.Enqueue(new Event(game.MessengerRavenTrack[0], "Use Messenger Raven"));
+            EventBuffer.Enqueue(new Event(null, "Start Action Phase"));
             
-            //Unload/Execute events
-                Event current = EventBuffer.ElementAt<Event>(0);
+        }
 
-                if (current.Text.Equals("Place Orders"))
-                {
-                    tab_Decision.SelectedIndex = 0;
-                    btn_NextAction.Enabled = true;
+        private void ActionPhase()
+        {
+            int[] playerRaids = new int[game.numPlayers];
+            int[] playerMarches = new int[game.numPlayers];
+            int[] playerConsolidates = new int[game.numPlayers];
 
-                }
-                /*else if (current.Text.Equals("Reveal Orders"))
-                {
-
-                }
-                else if (current.Text.Equals("Use Messenger Raven"))
-                {
-
-                }
-                else throw new Exception("Something went wrong in the Planning Phase!");*/
-
-                //Wait until Event is resolved
-
+            for(int i = 0; i < game.numPlayers; i++)
+            {
+                playerConsolidates[i] = playerMarches[i] = playerRaids[i] = 0;
+            }
             
+            #region 0. Count Orders
+
+            foreach(Plot p in game.map.MapPlots)
+            {
+                if(p.order != null)
+                {
+                    if(p.order.Raid)
+                    {
+                        for(int i = 0; i < game.numPlayers; i++)
+                        {
+                           if(game.IronThroneTrack[i] == p.owner)
+                            {
+                                playerRaids[i]++;
+                            }
+                        }
+                    }
+                    else if(p. order.March)
+                    {
+                        for (int i = 0; i < game.numPlayers; i++)
+                        {
+                            if (game.IronThroneTrack[i] == p.owner)
+                            {
+                                playerMarches[i]++;
+                            }
+                        }
+                    }
+                    else if(p. order.ConsolidatePower)
+                    {
+                        for (int i = 0; i < game.numPlayers; i++)
+                        {
+                            if (game.IronThroneTrack[i] == p.owner)
+                            {
+                                playerConsolidates[i]++;
+                            }
+                        }
+                    }
+                }
+            }
+
+            #endregion 0. Count Orders
+
+            #region 1. Resolve Raid Orders
+
+            for(int i = 0; i < game.numPlayers + 1; i++)
+            {
+                if (i == game.numPlayers)
+                {
+                    i = 0;
+                    if (ZeroArray(playerRaids)) break;
+                }
+
+                if(playerRaids[i] > 0)
+                {
+                    EventBuffer.Enqueue(new Event(game.IronThroneTrack[i], "Resolve Raid Order"));
+                    playerRaids[i]--;
+                }
+            }
+
+            #endregion 1. Resolve Raid Orders
+
+            #region 2. Resolve March Orders and combat
+
+            for (int i = 0; i < game.numPlayers + 1; i++)
+            {
+                if (i == game.numPlayers)
+                {
+                    i = 0;
+                    if (ZeroArray(playerMarches)) break;
+                }
+
+                if (playerMarches[i] > 0)
+                {
+                    EventBuffer.Enqueue(new Event(game.IronThroneTrack[i], "Resolve March Order"));
+                    playerMarches[i]--;
+                }
+            }
+
+            #endregion 2. Resolve March Orders and combat
+
+            #region 3. Resolve Consolidate Power Orders
+
+            for (int i = 0; i < game.numPlayers + 1; i++)
+            {
+                if (i == game.numPlayers)
+                {
+                    i = 0;
+                    if (ZeroArray(playerConsolidates)) break;
+                }
+
+                if (playerConsolidates[i] > 0)
+                {
+                    EventBuffer.Enqueue(new Event(game.IronThroneTrack[i], "Resolve Consolidate Power Order"));
+                    playerConsolidates[i]--;
+                }
+            }
+
+            #endregion 3. Resolve Consolidate Power Orders
+
+            EventBuffer.Enqueue(new Event(null, "Clean Up Unused Orders"));
         }
         
         public void displayMapInfo()
@@ -306,6 +404,16 @@ namespace GotCompanion
 
 
         }
+
+        private bool ZeroArray(int[] array)
+        {
+            for(int i = 0; i < array.Length; i++)
+            {
+                if (array[i] != 0) return false;
+            }
+            return true;
+        }
+
         #region Form Methods
         
 
@@ -320,25 +428,106 @@ namespace GotCompanion
 
             updateEventUI();
             btn_NextAction.Enabled = false;
+            
+            //Reset factionResolveOrder Plot array
+            for(int i = 0; i < 3; i++)
+            {
+                factionResolveOrder[i] = null;
+            }
+
 
             Event next = EventBuffer.ElementAt<Event>(0);
             switch(next.Text)
             {
+                case "Place Orders":
+                    tab_Decision.SelectedIndex = 0;
+                    btn_NextAction.Enabled = true;
+                    break;
                 case "Reveal Orders":
                     tab_Decision.SelectedIndex = 1;
+                    btn_RevealOrders.Enabled = true;
+                    break;
+                case "Use Messenger Raven":
+                    tab_Decision.SelectedIndex = 2;
+                    btn_UseRaven.Enabled = true;
+                    break;
+                case "Start Action Phase":
+                    tab_Decision.SelectedIndex = 3;
+                    btn_NextAction.Enabled = true;
+                    ActionPhase();
+                    break;
+                case "Resolve Raid Order":
+                    bool used1, used2, used3;
+                    used1 = used2 = used3 = false;
+                    
+
+                    foreach(Plot p in game.map.MapPlots)
+                    {
+                        if(p.order != null && p.order.Raid && p.owner.name.Equals(label_CurrentFaction.Text))
+                        {
+                            if (!used1)
+                            {
+                                factionResolveOrder[0] = p;
+                                btn_RaidOrder1.Text = p.name;
+                                used1 = true;
+                            }
+                            else if (!used2)
+                            {
+                                factionResolveOrder[1] = p;
+                                btn_RaidOrder2.Text = p.name;
+                                used2 = true;
+                            }
+                            else if (!used3)
+                            {
+                                factionResolveOrder[2] = p;
+                                btn_RaidOrder3.Text = p.name;
+                                used3 = true;
+                            }
+                            else throw new Exception("The button used bool system caused an error!");
+                        }
+                    }
+
+                    tab_Decision.SelectedIndex = 4;
+
                     break;
             }
 
             displayMapInfo();
         }
 
-        #endregion Form Methods
 
         private void btn_RevealOrders_Click(object sender, EventArgs e)
         {
-            var RevealOrders = new frmRevealOrders(this, game, EventBuffer.ElementAt<Event>(0).Player);
+            var RevealOrders = new frmRevealOrders(this, game, EventBuffer.ElementAt<Event>(0).Player, banned);
             RevealOrders.Show();
             btn_NextAction.Enabled = true;
+            btn_RevealOrders.Enabled = false;
+        }
+
+        private void btn_UseRaven_Click(object sender, EventArgs e)
+        {
+            var UseRaven = new frmMessengerRaven(game, game.MessengerRavenTrack[0], banned);
+            UseRaven.Show();
+            btn_NextAction.Enabled = true;
+            btn_UseRaven.Enabled = false;
+            
+        }
+
+        #endregion Form Methods
+
+        private void btn_RaidOrder1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_RaidOrder2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_RaidOrder3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

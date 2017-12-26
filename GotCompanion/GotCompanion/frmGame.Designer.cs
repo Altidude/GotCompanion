@@ -70,6 +70,17 @@
             this.label_PlanningPhase = new System.Windows.Forms.Label();
             this.label_PlanningPhaseDesc = new System.Windows.Forms.Label();
             this.tabPage_RevealOrders = new System.Windows.Forms.TabPage();
+            this.tlp_RevealOrders = new System.Windows.Forms.TableLayoutPanel();
+            this.label_RevealOrders = new System.Windows.Forms.Label();
+            this.btn_RevealOrders = new System.Windows.Forms.Button();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tlp_MessengerRaven = new System.Windows.Forms.TableLayoutPanel();
+            this.label_UseRaven = new System.Windows.Forms.Label();
+            this.btn_UseRaven = new System.Windows.Forms.Button();
+            this.tabPage_StartActionPhase = new System.Windows.Forms.TabPage();
+            this.tlp_StartActionPhase = new System.Windows.Forms.TableLayoutPanel();
+            this.label_StartActionPhase = new System.Windows.Forms.Label();
+            this.label_StartActionPhaseDesc = new System.Windows.Forms.Label();
             this.tab_Game_p2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label204 = new System.Windows.Forms.Label();
@@ -276,9 +287,27 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label_RevealOrders = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btn_RevealOrders = new System.Windows.Forms.Button();
+            this.tabPage_ResolveRaid = new System.Windows.Forms.TabPage();
+            this.tabPage_ResolveMarch = new System.Windows.Forms.TabPage();
+            this.tabPage_ConsolidatePower = new System.Windows.Forms.TabPage();
+            this.tlp_ResolveRaid = new System.Windows.Forms.TableLayoutPanel();
+            this.label_ResolveRaid = new System.Windows.Forms.Label();
+            this.tlp_RaidButtons = new System.Windows.Forms.TableLayoutPanel();
+            this.btn_RaidOrder1 = new System.Windows.Forms.Button();
+            this.btn_RaidOrder2 = new System.Windows.Forms.Button();
+            this.btn_RaidOrder3 = new System.Windows.Forms.Button();
+            this.tlp_ResolveMarch = new System.Windows.Forms.TableLayoutPanel();
+            this.label_ResolveMarch = new System.Windows.Forms.Label();
+            this.tlp_MarchButtons = new System.Windows.Forms.TableLayoutPanel();
+            this.btn_MarchOrder3 = new System.Windows.Forms.Button();
+            this.btn_MarchOrder2 = new System.Windows.Forms.Button();
+            this.btn_MarchOrder1 = new System.Windows.Forms.Button();
+            this.tlp_ConsolidatePower = new System.Windows.Forms.TableLayoutPanel();
+            this.label_ConsolidatePower = new System.Windows.Forms.Label();
+            this.tlp_ConsolidatePowerButtons = new System.Windows.Forms.TableLayoutPanel();
+            this.btn_ConsolidatePower3 = new System.Windows.Forms.Button();
+            this.btn_ConsolidatePower2 = new System.Windows.Forms.Button();
+            this.btn_ConsolidatePower1 = new System.Windows.Forms.Button();
             this.tab_Game.SuspendLayout();
             this.tab_Game_p1.SuspendLayout();
             this.tlp_Events.SuspendLayout();
@@ -289,9 +318,22 @@
             this.tabPage_PlaceOrders.SuspendLayout();
             this.tlp_Planning.SuspendLayout();
             this.tabPage_RevealOrders.SuspendLayout();
+            this.tlp_RevealOrders.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tlp_MessengerRaven.SuspendLayout();
+            this.tabPage_StartActionPhase.SuspendLayout();
+            this.tlp_StartActionPhase.SuspendLayout();
             this.tab_Game_p2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
+            this.tabPage_ResolveRaid.SuspendLayout();
+            this.tabPage_ResolveMarch.SuspendLayout();
+            this.tabPage_ConsolidatePower.SuspendLayout();
+            this.tlp_ResolveRaid.SuspendLayout();
+            this.tlp_RaidButtons.SuspendLayout();
+            this.tlp_ResolveMarch.SuspendLayout();
+            this.tlp_MarchButtons.SuspendLayout();
+            this.tlp_ConsolidatePower.SuspendLayout();
+            this.tlp_ConsolidatePowerButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab_Game
@@ -726,6 +768,11 @@
             // 
             this.tab_Decision.Controls.Add(this.tabPage_PlaceOrders);
             this.tab_Decision.Controls.Add(this.tabPage_RevealOrders);
+            this.tab_Decision.Controls.Add(this.tabPage1);
+            this.tab_Decision.Controls.Add(this.tabPage_StartActionPhase);
+            this.tab_Decision.Controls.Add(this.tabPage_ResolveRaid);
+            this.tab_Decision.Controls.Add(this.tabPage_ResolveMarch);
+            this.tab_Decision.Controls.Add(this.tabPage_ConsolidatePower);
             this.tab_Decision.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tab_Decision.Location = new System.Drawing.Point(3, 457);
             this.tab_Decision.Name = "tab_Decision";
@@ -786,7 +833,7 @@
             // 
             // tabPage_RevealOrders
             // 
-            this.tabPage_RevealOrders.Controls.Add(this.tableLayoutPanel2);
+            this.tabPage_RevealOrders.Controls.Add(this.tlp_RevealOrders);
             this.tabPage_RevealOrders.Location = new System.Drawing.Point(4, 22);
             this.tabPage_RevealOrders.Name = "tabPage_RevealOrders";
             this.tabPage_RevealOrders.Padding = new System.Windows.Forms.Padding(3);
@@ -794,6 +841,144 @@
             this.tabPage_RevealOrders.TabIndex = 1;
             this.tabPage_RevealOrders.Text = "Reveal Orders";
             this.tabPage_RevealOrders.UseVisualStyleBackColor = true;
+            // 
+            // tlp_RevealOrders
+            // 
+            this.tlp_RevealOrders.ColumnCount = 1;
+            this.tlp_RevealOrders.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlp_RevealOrders.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlp_RevealOrders.Controls.Add(this.label_RevealOrders, 0, 0);
+            this.tlp_RevealOrders.Controls.Add(this.btn_RevealOrders, 0, 1);
+            this.tlp_RevealOrders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlp_RevealOrders.Location = new System.Drawing.Point(3, 3);
+            this.tlp_RevealOrders.Name = "tlp_RevealOrders";
+            this.tlp_RevealOrders.RowCount = 2;
+            this.tlp_RevealOrders.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlp_RevealOrders.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tlp_RevealOrders.Size = new System.Drawing.Size(956, 143);
+            this.tlp_RevealOrders.TabIndex = 1;
+            // 
+            // label_RevealOrders
+            // 
+            this.label_RevealOrders.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_RevealOrders.AutoSize = true;
+            this.label_RevealOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_RevealOrders.Location = new System.Drawing.Point(423, 4);
+            this.label_RevealOrders.Name = "label_RevealOrders";
+            this.label_RevealOrders.Size = new System.Drawing.Size(110, 20);
+            this.label_RevealOrders.TabIndex = 8;
+            this.label_RevealOrders.Text = "Reveal Orders";
+            // 
+            // btn_RevealOrders
+            // 
+            this.btn_RevealOrders.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_RevealOrders.Location = new System.Drawing.Point(403, 31);
+            this.btn_RevealOrders.Name = "btn_RevealOrders";
+            this.btn_RevealOrders.Size = new System.Drawing.Size(150, 25);
+            this.btn_RevealOrders.TabIndex = 9;
+            this.btn_RevealOrders.Text = "Reveal Orders";
+            this.btn_RevealOrders.UseVisualStyleBackColor = true;
+            this.btn_RevealOrders.Click += new System.EventHandler(this.btn_RevealOrders_Click);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.tlp_MessengerRaven);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(962, 149);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Use Messenger Raven";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tlp_MessengerRaven
+            // 
+            this.tlp_MessengerRaven.ColumnCount = 1;
+            this.tlp_MessengerRaven.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlp_MessengerRaven.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlp_MessengerRaven.Controls.Add(this.label_UseRaven, 0, 0);
+            this.tlp_MessengerRaven.Controls.Add(this.btn_UseRaven, 0, 1);
+            this.tlp_MessengerRaven.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlp_MessengerRaven.Location = new System.Drawing.Point(3, 3);
+            this.tlp_MessengerRaven.Name = "tlp_MessengerRaven";
+            this.tlp_MessengerRaven.RowCount = 2;
+            this.tlp_MessengerRaven.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlp_MessengerRaven.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tlp_MessengerRaven.Size = new System.Drawing.Size(956, 143);
+            this.tlp_MessengerRaven.TabIndex = 2;
+            // 
+            // label_UseRaven
+            // 
+            this.label_UseRaven.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_UseRaven.AutoSize = true;
+            this.label_UseRaven.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_UseRaven.Location = new System.Drawing.Point(392, 4);
+            this.label_UseRaven.Name = "label_UseRaven";
+            this.label_UseRaven.Size = new System.Drawing.Size(171, 20);
+            this.label_UseRaven.TabIndex = 8;
+            this.label_UseRaven.Text = "Use Messenger Raven";
+            // 
+            // btn_UseRaven
+            // 
+            this.btn_UseRaven.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_UseRaven.Location = new System.Drawing.Point(403, 31);
+            this.btn_UseRaven.Name = "btn_UseRaven";
+            this.btn_UseRaven.Size = new System.Drawing.Size(150, 25);
+            this.btn_UseRaven.TabIndex = 9;
+            this.btn_UseRaven.Text = "Use Messenger Raven";
+            this.btn_UseRaven.UseVisualStyleBackColor = true;
+            this.btn_UseRaven.Click += new System.EventHandler(this.btn_UseRaven_Click);
+            // 
+            // tabPage_StartActionPhase
+            // 
+            this.tabPage_StartActionPhase.Controls.Add(this.tlp_StartActionPhase);
+            this.tabPage_StartActionPhase.Location = new System.Drawing.Point(4, 22);
+            this.tabPage_StartActionPhase.Name = "tabPage_StartActionPhase";
+            this.tabPage_StartActionPhase.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_StartActionPhase.Size = new System.Drawing.Size(962, 149);
+            this.tabPage_StartActionPhase.TabIndex = 3;
+            this.tabPage_StartActionPhase.Text = "Start Action Phase";
+            this.tabPage_StartActionPhase.UseVisualStyleBackColor = true;
+            // 
+            // tlp_StartActionPhase
+            // 
+            this.tlp_StartActionPhase.ColumnCount = 1;
+            this.tlp_StartActionPhase.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlp_StartActionPhase.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlp_StartActionPhase.Controls.Add(this.label_StartActionPhase, 0, 0);
+            this.tlp_StartActionPhase.Controls.Add(this.label_StartActionPhaseDesc, 0, 1);
+            this.tlp_StartActionPhase.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlp_StartActionPhase.Location = new System.Drawing.Point(3, 3);
+            this.tlp_StartActionPhase.Name = "tlp_StartActionPhase";
+            this.tlp_StartActionPhase.RowCount = 2;
+            this.tlp_StartActionPhase.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlp_StartActionPhase.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tlp_StartActionPhase.Size = new System.Drawing.Size(956, 143);
+            this.tlp_StartActionPhase.TabIndex = 1;
+            // 
+            // label_StartActionPhase
+            // 
+            this.label_StartActionPhase.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_StartActionPhase.AutoSize = true;
+            this.label_StartActionPhase.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_StartActionPhase.Location = new System.Drawing.Point(407, 4);
+            this.label_StartActionPhase.Name = "label_StartActionPhase";
+            this.label_StartActionPhase.Size = new System.Drawing.Size(142, 20);
+            this.label_StartActionPhase.TabIndex = 8;
+            this.label_StartActionPhase.Text = "Start Action Phase";
+            // 
+            // label_StartActionPhaseDesc
+            // 
+            this.label_StartActionPhaseDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_StartActionPhaseDesc.AutoSize = true;
+            this.label_StartActionPhaseDesc.Location = new System.Drawing.Point(3, 28);
+            this.label_StartActionPhaseDesc.Name = "label_StartActionPhaseDesc";
+            this.label_StartActionPhaseDesc.Size = new System.Drawing.Size(950, 115);
+            this.label_StartActionPhaseDesc.TabIndex = 9;
+            this.label_StartActionPhaseDesc.Text = resources.GetString("label_StartActionPhaseDesc.Text");
+            this.label_StartActionPhaseDesc.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // tab_Game_p2
             // 
@@ -3121,43 +3306,269 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Province";
             // 
-            // label_RevealOrders
+            // tabPage_ResolveRaid
             // 
-            this.label_RevealOrders.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label_RevealOrders.AutoSize = true;
-            this.label_RevealOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_RevealOrders.Location = new System.Drawing.Point(423, 4);
-            this.label_RevealOrders.Name = "label_RevealOrders";
-            this.label_RevealOrders.Size = new System.Drawing.Size(110, 20);
-            this.label_RevealOrders.TabIndex = 8;
-            this.label_RevealOrders.Text = "Reveal Orders";
+            this.tabPage_ResolveRaid.Controls.Add(this.tlp_ResolveRaid);
+            this.tabPage_ResolveRaid.Location = new System.Drawing.Point(4, 22);
+            this.tabPage_ResolveRaid.Name = "tabPage_ResolveRaid";
+            this.tabPage_ResolveRaid.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_ResolveRaid.Size = new System.Drawing.Size(962, 149);
+            this.tabPage_ResolveRaid.TabIndex = 4;
+            this.tabPage_ResolveRaid.Text = "Resolve Raid";
+            this.tabPage_ResolveRaid.UseVisualStyleBackColor = true;
             // 
-            // tableLayoutPanel2
+            // tabPage_ResolveMarch
             // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Controls.Add(this.label_RevealOrders, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btn_RevealOrders, 0, 1);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(956, 143);
-            this.tableLayoutPanel2.TabIndex = 1;
+            this.tabPage_ResolveMarch.Controls.Add(this.tlp_ResolveMarch);
+            this.tabPage_ResolveMarch.Location = new System.Drawing.Point(4, 22);
+            this.tabPage_ResolveMarch.Name = "tabPage_ResolveMarch";
+            this.tabPage_ResolveMarch.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_ResolveMarch.Size = new System.Drawing.Size(962, 149);
+            this.tabPage_ResolveMarch.TabIndex = 5;
+            this.tabPage_ResolveMarch.Text = "Resolve March";
+            this.tabPage_ResolveMarch.UseVisualStyleBackColor = true;
             // 
-            // btn_RevealOrders
+            // tabPage_ConsolidatePower
             // 
-            this.btn_RevealOrders.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btn_RevealOrders.Location = new System.Drawing.Point(403, 31);
-            this.btn_RevealOrders.Name = "btn_RevealOrders";
-            this.btn_RevealOrders.Size = new System.Drawing.Size(150, 25);
-            this.btn_RevealOrders.TabIndex = 9;
-            this.btn_RevealOrders.Text = "Reveal Orders";
-            this.btn_RevealOrders.UseVisualStyleBackColor = true;
-            this.btn_RevealOrders.Click += new System.EventHandler(this.btn_RevealOrders_Click);
+            this.tabPage_ConsolidatePower.Controls.Add(this.tlp_ConsolidatePower);
+            this.tabPage_ConsolidatePower.Location = new System.Drawing.Point(4, 22);
+            this.tabPage_ConsolidatePower.Name = "tabPage_ConsolidatePower";
+            this.tabPage_ConsolidatePower.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_ConsolidatePower.Size = new System.Drawing.Size(962, 149);
+            this.tabPage_ConsolidatePower.TabIndex = 6;
+            this.tabPage_ConsolidatePower.Text = "Consolidate Power";
+            this.tabPage_ConsolidatePower.UseVisualStyleBackColor = true;
+            // 
+            // tlp_ResolveRaid
+            // 
+            this.tlp_ResolveRaid.ColumnCount = 1;
+            this.tlp_ResolveRaid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlp_ResolveRaid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlp_ResolveRaid.Controls.Add(this.label_ResolveRaid, 0, 0);
+            this.tlp_ResolveRaid.Controls.Add(this.tlp_RaidButtons, 0, 1);
+            this.tlp_ResolveRaid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlp_ResolveRaid.Location = new System.Drawing.Point(3, 3);
+            this.tlp_ResolveRaid.Name = "tlp_ResolveRaid";
+            this.tlp_ResolveRaid.RowCount = 2;
+            this.tlp_ResolveRaid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlp_ResolveRaid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tlp_ResolveRaid.Size = new System.Drawing.Size(956, 143);
+            this.tlp_ResolveRaid.TabIndex = 2;
+            // 
+            // label_ResolveRaid
+            // 
+            this.label_ResolveRaid.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_ResolveRaid.AutoSize = true;
+            this.label_ResolveRaid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_ResolveRaid.Location = new System.Drawing.Point(364, 4);
+            this.label_ResolveRaid.Name = "label_ResolveRaid";
+            this.label_ResolveRaid.Size = new System.Drawing.Size(228, 20);
+            this.label_ResolveRaid.TabIndex = 8;
+            this.label_ResolveRaid.Text = "Select a Raid Order to resolve: ";
+            // 
+            // tlp_RaidButtons
+            // 
+            this.tlp_RaidButtons.ColumnCount = 3;
+            this.tlp_RaidButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlp_RaidButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tlp_RaidButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tlp_RaidButtons.Controls.Add(this.btn_RaidOrder3, 2, 0);
+            this.tlp_RaidButtons.Controls.Add(this.btn_RaidOrder2, 1, 0);
+            this.tlp_RaidButtons.Controls.Add(this.btn_RaidOrder1, 0, 0);
+            this.tlp_RaidButtons.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlp_RaidButtons.Location = new System.Drawing.Point(3, 31);
+            this.tlp_RaidButtons.Name = "tlp_RaidButtons";
+            this.tlp_RaidButtons.RowCount = 1;
+            this.tlp_RaidButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlp_RaidButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlp_RaidButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlp_RaidButtons.Size = new System.Drawing.Size(950, 109);
+            this.tlp_RaidButtons.TabIndex = 9;
+            // 
+            // btn_RaidOrder1
+            // 
+            this.btn_RaidOrder1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_RaidOrder1.Location = new System.Drawing.Point(58, 17);
+            this.btn_RaidOrder1.Name = "btn_RaidOrder1";
+            this.btn_RaidOrder1.Size = new System.Drawing.Size(200, 75);
+            this.btn_RaidOrder1.TabIndex = 0;
+            this.btn_RaidOrder1.Text = "[Raid Order 1]";
+            this.btn_RaidOrder1.UseVisualStyleBackColor = true;
+            this.btn_RaidOrder1.Click += new System.EventHandler(this.btn_RaidOrder1_Click);
+            // 
+            // btn_RaidOrder2
+            // 
+            this.btn_RaidOrder2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_RaidOrder2.Location = new System.Drawing.Point(374, 17);
+            this.btn_RaidOrder2.Name = "btn_RaidOrder2";
+            this.btn_RaidOrder2.Size = new System.Drawing.Size(200, 75);
+            this.btn_RaidOrder2.TabIndex = 1;
+            this.btn_RaidOrder2.Text = "[Raid Order 2]";
+            this.btn_RaidOrder2.UseVisualStyleBackColor = true;
+            this.btn_RaidOrder2.Click += new System.EventHandler(this.btn_RaidOrder2_Click);
+            // 
+            // btn_RaidOrder3
+            // 
+            this.btn_RaidOrder3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_RaidOrder3.Location = new System.Drawing.Point(691, 17);
+            this.btn_RaidOrder3.Name = "btn_RaidOrder3";
+            this.btn_RaidOrder3.Size = new System.Drawing.Size(200, 75);
+            this.btn_RaidOrder3.TabIndex = 2;
+            this.btn_RaidOrder3.Text = "[Raid Order 3]";
+            this.btn_RaidOrder3.UseVisualStyleBackColor = true;
+            this.btn_RaidOrder3.Click += new System.EventHandler(this.btn_RaidOrder3_Click);
+            // 
+            // tlp_ResolveMarch
+            // 
+            this.tlp_ResolveMarch.ColumnCount = 1;
+            this.tlp_ResolveMarch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlp_ResolveMarch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlp_ResolveMarch.Controls.Add(this.label_ResolveMarch, 0, 0);
+            this.tlp_ResolveMarch.Controls.Add(this.tlp_MarchButtons, 0, 1);
+            this.tlp_ResolveMarch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlp_ResolveMarch.Location = new System.Drawing.Point(3, 3);
+            this.tlp_ResolveMarch.Name = "tlp_ResolveMarch";
+            this.tlp_ResolveMarch.RowCount = 2;
+            this.tlp_ResolveMarch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlp_ResolveMarch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tlp_ResolveMarch.Size = new System.Drawing.Size(956, 143);
+            this.tlp_ResolveMarch.TabIndex = 3;
+            // 
+            // label_ResolveMarch
+            // 
+            this.label_ResolveMarch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_ResolveMarch.AutoSize = true;
+            this.label_ResolveMarch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_ResolveMarch.Location = new System.Drawing.Point(358, 4);
+            this.label_ResolveMarch.Name = "label_ResolveMarch";
+            this.label_ResolveMarch.Size = new System.Drawing.Size(239, 20);
+            this.label_ResolveMarch.TabIndex = 8;
+            this.label_ResolveMarch.Text = "Select a March Order to resolve: ";
+            // 
+            // tlp_MarchButtons
+            // 
+            this.tlp_MarchButtons.ColumnCount = 3;
+            this.tlp_MarchButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlp_MarchButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tlp_MarchButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tlp_MarchButtons.Controls.Add(this.btn_MarchOrder3, 2, 0);
+            this.tlp_MarchButtons.Controls.Add(this.btn_MarchOrder2, 1, 0);
+            this.tlp_MarchButtons.Controls.Add(this.btn_MarchOrder1, 0, 0);
+            this.tlp_MarchButtons.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlp_MarchButtons.Location = new System.Drawing.Point(3, 31);
+            this.tlp_MarchButtons.Name = "tlp_MarchButtons";
+            this.tlp_MarchButtons.RowCount = 1;
+            this.tlp_MarchButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlp_MarchButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlp_MarchButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlp_MarchButtons.Size = new System.Drawing.Size(950, 109);
+            this.tlp_MarchButtons.TabIndex = 9;
+            // 
+            // btn_MarchOrder3
+            // 
+            this.btn_MarchOrder3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_MarchOrder3.Location = new System.Drawing.Point(691, 17);
+            this.btn_MarchOrder3.Name = "btn_MarchOrder3";
+            this.btn_MarchOrder3.Size = new System.Drawing.Size(200, 75);
+            this.btn_MarchOrder3.TabIndex = 2;
+            this.btn_MarchOrder3.Text = "[March Order 3]";
+            this.btn_MarchOrder3.UseVisualStyleBackColor = true;
+            // 
+            // btn_MarchOrder2
+            // 
+            this.btn_MarchOrder2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_MarchOrder2.Location = new System.Drawing.Point(374, 17);
+            this.btn_MarchOrder2.Name = "btn_MarchOrder2";
+            this.btn_MarchOrder2.Size = new System.Drawing.Size(200, 75);
+            this.btn_MarchOrder2.TabIndex = 1;
+            this.btn_MarchOrder2.Text = "[March Order 2]";
+            this.btn_MarchOrder2.UseVisualStyleBackColor = true;
+            // 
+            // btn_MarchOrder1
+            // 
+            this.btn_MarchOrder1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_MarchOrder1.Location = new System.Drawing.Point(58, 17);
+            this.btn_MarchOrder1.Name = "btn_MarchOrder1";
+            this.btn_MarchOrder1.Size = new System.Drawing.Size(200, 75);
+            this.btn_MarchOrder1.TabIndex = 0;
+            this.btn_MarchOrder1.Text = "[March Order 1]";
+            this.btn_MarchOrder1.UseVisualStyleBackColor = true;
+            // 
+            // tlp_ConsolidatePower
+            // 
+            this.tlp_ConsolidatePower.ColumnCount = 1;
+            this.tlp_ConsolidatePower.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlp_ConsolidatePower.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlp_ConsolidatePower.Controls.Add(this.label_ConsolidatePower, 0, 0);
+            this.tlp_ConsolidatePower.Controls.Add(this.tlp_ConsolidatePowerButtons, 0, 1);
+            this.tlp_ConsolidatePower.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlp_ConsolidatePower.Location = new System.Drawing.Point(3, 3);
+            this.tlp_ConsolidatePower.Name = "tlp_ConsolidatePower";
+            this.tlp_ConsolidatePower.RowCount = 2;
+            this.tlp_ConsolidatePower.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlp_ConsolidatePower.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tlp_ConsolidatePower.Size = new System.Drawing.Size(956, 143);
+            this.tlp_ConsolidatePower.TabIndex = 3;
+            // 
+            // label_ConsolidatePower
+            // 
+            this.label_ConsolidatePower.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_ConsolidatePower.AutoSize = true;
+            this.label_ConsolidatePower.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_ConsolidatePower.Location = new System.Drawing.Point(320, 4);
+            this.label_ConsolidatePower.Name = "label_ConsolidatePower";
+            this.label_ConsolidatePower.Size = new System.Drawing.Size(316, 20);
+            this.label_ConsolidatePower.TabIndex = 8;
+            this.label_ConsolidatePower.Text = "Select a Plot in which to Consolidate Power:";
+            // 
+            // tlp_ConsolidatePowerButtons
+            // 
+            this.tlp_ConsolidatePowerButtons.ColumnCount = 3;
+            this.tlp_ConsolidatePowerButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlp_ConsolidatePowerButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tlp_ConsolidatePowerButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tlp_ConsolidatePowerButtons.Controls.Add(this.btn_ConsolidatePower3, 2, 0);
+            this.tlp_ConsolidatePowerButtons.Controls.Add(this.btn_ConsolidatePower2, 1, 0);
+            this.tlp_ConsolidatePowerButtons.Controls.Add(this.btn_ConsolidatePower1, 0, 0);
+            this.tlp_ConsolidatePowerButtons.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlp_ConsolidatePowerButtons.Location = new System.Drawing.Point(3, 31);
+            this.tlp_ConsolidatePowerButtons.Name = "tlp_ConsolidatePowerButtons";
+            this.tlp_ConsolidatePowerButtons.RowCount = 1;
+            this.tlp_ConsolidatePowerButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlp_ConsolidatePowerButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlp_ConsolidatePowerButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlp_ConsolidatePowerButtons.Size = new System.Drawing.Size(950, 109);
+            this.tlp_ConsolidatePowerButtons.TabIndex = 9;
+            // 
+            // btn_ConsolidatePower3
+            // 
+            this.btn_ConsolidatePower3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_ConsolidatePower3.Location = new System.Drawing.Point(691, 17);
+            this.btn_ConsolidatePower3.Name = "btn_ConsolidatePower3";
+            this.btn_ConsolidatePower3.Size = new System.Drawing.Size(200, 75);
+            this.btn_ConsolidatePower3.TabIndex = 2;
+            this.btn_ConsolidatePower3.Text = "[Consolidate Power 3]";
+            this.btn_ConsolidatePower3.UseVisualStyleBackColor = true;
+            // 
+            // btn_ConsolidatePower2
+            // 
+            this.btn_ConsolidatePower2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_ConsolidatePower2.Location = new System.Drawing.Point(374, 17);
+            this.btn_ConsolidatePower2.Name = "btn_ConsolidatePower2";
+            this.btn_ConsolidatePower2.Size = new System.Drawing.Size(200, 75);
+            this.btn_ConsolidatePower2.TabIndex = 1;
+            this.btn_ConsolidatePower2.Text = "[Consolidate Power 2]";
+            this.btn_ConsolidatePower2.UseVisualStyleBackColor = true;
+            // 
+            // btn_ConsolidatePower1
+            // 
+            this.btn_ConsolidatePower1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_ConsolidatePower1.Location = new System.Drawing.Point(58, 17);
+            this.btn_ConsolidatePower1.Name = "btn_ConsolidatePower1";
+            this.btn_ConsolidatePower1.Size = new System.Drawing.Size(200, 75);
+            this.btn_ConsolidatePower1.TabIndex = 0;
+            this.btn_ConsolidatePower1.Text = "[Consolidate Power 1]";
+            this.btn_ConsolidatePower1.UseVisualStyleBackColor = true;
             // 
             // frmGame
             // 
@@ -3184,11 +3595,29 @@
             this.tlp_Planning.ResumeLayout(false);
             this.tlp_Planning.PerformLayout();
             this.tabPage_RevealOrders.ResumeLayout(false);
+            this.tlp_RevealOrders.ResumeLayout(false);
+            this.tlp_RevealOrders.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tlp_MessengerRaven.ResumeLayout(false);
+            this.tlp_MessengerRaven.PerformLayout();
+            this.tabPage_StartActionPhase.ResumeLayout(false);
+            this.tlp_StartActionPhase.ResumeLayout(false);
+            this.tlp_StartActionPhase.PerformLayout();
             this.tab_Game_p2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
+            this.tabPage_ResolveRaid.ResumeLayout(false);
+            this.tabPage_ResolveMarch.ResumeLayout(false);
+            this.tabPage_ConsolidatePower.ResumeLayout(false);
+            this.tlp_ResolveRaid.ResumeLayout(false);
+            this.tlp_ResolveRaid.PerformLayout();
+            this.tlp_RaidButtons.ResumeLayout(false);
+            this.tlp_ResolveMarch.ResumeLayout(false);
+            this.tlp_ResolveMarch.PerformLayout();
+            this.tlp_MarchButtons.ResumeLayout(false);
+            this.tlp_ConsolidatePower.ResumeLayout(false);
+            this.tlp_ConsolidatePower.PerformLayout();
+            this.tlp_ConsolidatePowerButtons.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -3442,8 +3871,37 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tlp_RevealOrders;
         private System.Windows.Forms.Label label_RevealOrders;
         private System.Windows.Forms.Button btn_RevealOrders;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TableLayoutPanel tlp_MessengerRaven;
+        private System.Windows.Forms.Label label_UseRaven;
+        private System.Windows.Forms.Button btn_UseRaven;
+        private System.Windows.Forms.TabPage tabPage_StartActionPhase;
+        private System.Windows.Forms.TableLayoutPanel tlp_StartActionPhase;
+        private System.Windows.Forms.Label label_StartActionPhase;
+        private System.Windows.Forms.Label label_StartActionPhaseDesc;
+        private System.Windows.Forms.TabPage tabPage_ResolveRaid;
+        private System.Windows.Forms.TabPage tabPage_ResolveMarch;
+        private System.Windows.Forms.TabPage tabPage_ConsolidatePower;
+        private System.Windows.Forms.TableLayoutPanel tlp_ResolveRaid;
+        private System.Windows.Forms.Label label_ResolveRaid;
+        private System.Windows.Forms.TableLayoutPanel tlp_RaidButtons;
+        private System.Windows.Forms.Button btn_RaidOrder3;
+        private System.Windows.Forms.Button btn_RaidOrder2;
+        private System.Windows.Forms.Button btn_RaidOrder1;
+        private System.Windows.Forms.TableLayoutPanel tlp_ResolveMarch;
+        private System.Windows.Forms.Label label_ResolveMarch;
+        private System.Windows.Forms.TableLayoutPanel tlp_MarchButtons;
+        private System.Windows.Forms.Button btn_MarchOrder3;
+        private System.Windows.Forms.Button btn_MarchOrder2;
+        private System.Windows.Forms.Button btn_MarchOrder1;
+        private System.Windows.Forms.TableLayoutPanel tlp_ConsolidatePower;
+        private System.Windows.Forms.Label label_ConsolidatePower;
+        private System.Windows.Forms.TableLayoutPanel tlp_ConsolidatePowerButtons;
+        private System.Windows.Forms.Button btn_ConsolidatePower3;
+        private System.Windows.Forms.Button btn_ConsolidatePower2;
+        private System.Windows.Forms.Button btn_ConsolidatePower1;
     }
 }

@@ -59,6 +59,12 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMessengerRaven.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMessengerRaven.Designer.cs">
+      <DependentUpon>frmMessengerRaven.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRevealOrders.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMessengerRaven.resx">
+      <DependentUpon>frmMessengerRaven.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRevealOrders.resx">
       <DependentUpon>frmRevealOrders.cs</DependentUpon>

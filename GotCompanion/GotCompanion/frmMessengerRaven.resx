@@ -117,23 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label_PlanningPhaseDesc.Text" xml:space="preserve">
-    <value>In the planning phase, all players place Order Tokens in provinces which have their respective units.
-Players may only place as many starred Order Tokens as they are allowed, listed in the "Factions" section.
-
-Current Effects may prevent certain types of Order Tokens from being placed.
-
-Once all players have placed down their Order Tokens, click "Next Action".</value>
-  </data>
-  <data name="label_StartActionPhaseDesc.Text" xml:space="preserve">
-    <value>In the action phase, all players resolve their Order Tokens in turn order.
-
-Tokens are resolved in the following order:
-
-1. Raid Orders
-2. March Orders (and Support/Defense Orders in combat)
-3. Consolidate Power Orders 
-
-Click "Next Action" to continue.</value>
-  </data>
 </root>

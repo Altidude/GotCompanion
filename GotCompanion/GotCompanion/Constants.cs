@@ -94,8 +94,21 @@ namespace GotCompanion
         /// <param name="o"></param>
         public void addOrder(Order o)
         {
+            if (this.order != null) removeOrder();
+
             o.location = this;
             this.order = o;
+        }
+
+        /// <summary>
+        /// Remove an order from the Plot
+        /// </summary>
+        public void removeOrder()
+        {
+            if (this.order == null) return;
+
+            order.location = null;
+            order = null;
         }
 
 

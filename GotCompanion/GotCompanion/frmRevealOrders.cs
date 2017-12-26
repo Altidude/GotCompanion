@@ -19,8 +19,9 @@ namespace GotCompanion
 
         frmGame gameForm;
         Scenario game;
+        Order typeBanned;
 
-        public frmRevealOrders(frmGame gameForm, Scenario game, Faction fac)
+        public frmRevealOrders(frmGame gameForm, Scenario game, Faction fac, Order typeBanned)
         {
             InitializeComponent();
             stars = numOrders = pageNum = index = 0;
@@ -28,6 +29,7 @@ namespace GotCompanion
             OrderSet = fac.OrderSet;
             this.gameForm = gameForm;
             this.game = game;
+            this.typeBanned = typeBanned;
 
             //Gather information
             foreach(Plot p in game.map.MapPlots)
@@ -65,7 +67,7 @@ namespace GotCompanion
 
             
             btn_Finish.Enabled = false;
-
+            updateUI();
         }
 
         private void updateUI()
@@ -75,8 +77,42 @@ namespace GotCompanion
                 label_PlotName.Text = OrderPlots[pageNum].name;
             }catch(Exception e)
             {
-
+                //throw new Exception("Attempting to place more orders than there are available plots.");
             }
+
+            if (typeBanned == null)
+            {
+                //do nothing
+            }
+            else if (typeBanned.March)
+            {
+                btn_March3.Enabled = false;
+            }
+            else if (typeBanned.Defense)
+            {
+                btn_Defense1.Enabled = false;
+                btn_Defense2.Enabled = false;
+                btn_Defense3.Enabled = false;
+            }
+            else if (typeBanned.Raid)
+            {
+                btn_Raid1.Enabled = false;
+                btn_Raid2.Enabled = false;
+                btn_Raid3.Enabled = false;
+            }
+            else if (typeBanned.ConsolidatePower)
+            {
+                btn_ConsolidatePower1.Enabled = false;
+                btn_ConsolidatePower2.Enabled = false;
+                btn_ConsolidatePower3.Enabled = false;
+            }
+            else if (typeBanned.Support)
+            {
+                btn_Support1.Enabled = false;
+                btn_Support2.Enabled = false;
+                btn_Support3.Enabled = false;
+            }
+            else throw new Exception("Invalid Order is being banned this round!");
 
             
             label_StarredOrders.Text = "Starred Orders: (" + stars + "/" + starsMax + ")";
